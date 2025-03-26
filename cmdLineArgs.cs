@@ -2,7 +2,7 @@
 using System.IO;
 
 namespace CMDLineArgs {
-    public static class Program {
+    public class Program {
 	    static void Main(string[] args) {
 		    // string pathh = @"/home/omkar/Documents/fileName.txt";
             // Console.WriteLine(pathh);
@@ -14,7 +14,7 @@ namespace CMDLineArgs {
                 for(short i = 0; i < args.Length; i++) {
                     Console.WriteLine($"Arg {i}: {args[i]}");
                 }
-            }else {
+            } else {
                 Console.WriteLine("No arguments provided");
             }
 	    }

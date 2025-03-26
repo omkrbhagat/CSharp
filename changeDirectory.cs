@@ -2,10 +2,11 @@
 using System.IO;
 using System.Linq;
 
-namespace CSharpShell {
-    public static class Demo {
+namespace ChangeDir {
+    public class Program {
         static void Main(string[] args) {
-            Directory.SetCurrentDirectory("/storage/emulated/0/Documents");
+            string path = @"/storage/emulated/0/Documents/";
+            Directory.SetCurrentDirectory(path);
             // Console.WriteLine($"pwd: {Environment.CurrentDirectory}");
             Console.WriteLine($"pwd: {Directory.GetCurrentDirectory()}");
         }
