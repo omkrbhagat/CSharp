@@ -9,7 +9,7 @@ using System.Threading.Tasks;
     `namespace` is used to organize your code,
     & it is a container for classes & other namespaces.
 */
-namespace CSharpShell
+namespace TopLevel
 {
     /*
         `class` is a container for data & methods,

@@ -5,8 +5,10 @@
     • Reference Data Types
     • Pointer Data Types
 */
-namespace DataTypes {
-    public static class Program {
+namespace DataTypes
+{
+    public class Program
+    {
 
         /*
             An `enum` is a special data type used for defining named constant values.
@@ -17,7 +19,8 @@ namespace DataTypes {
             etc), not type declarations (like enum, class, struct, etc). Types must
             be declared at higher scope (class or namespace level).
         */
-        enum Days {
+        enum Days
+        {
             Monday,
             Tuesday,
             Wednesday,
@@ -27,7 +30,8 @@ namespace DataTypes {
             Sunday
         }
 
-        public static void Main(string[] args) {
+        static void Main(string[] args)
+        {
 
             /*
                 Value Data Types:
@@ -48,36 +52,46 @@ namespace DataTypes {
 
             byte myByte = 255;
             Console.WriteLine($"{myByte.GetType()}: {myByte}");
+            Console.WriteLine($"Size: {byte.MinValue} to {byte.MaxValue}\n");
 
             sbyte mySByte = 127;
             Console.WriteLine($"{mySByte.GetType()}: {mySByte}");
+            Console.WriteLine($"Size: {sbyte.MinValue} to {sbyte.MaxValue}\n");
 
             short myShort = 32767;
             Console.WriteLine($"{myShort.GetType()}: {myShort}");
+            Console.WriteLine($"Size: {short.MinValue} to {short.MaxValue}\n");
+            
 
             ushort myUShort = 65535;
             Console.WriteLine($"{myUShort.GetType()}: {myUShort}");
+            Console.WriteLine($"Size: {ushort.MinValue} to {ushort.MaxValue}\n");
 
             int myInt = 2147483647; // 2 billion
             Console.WriteLine($"{myInt.GetType()}: {myInt}");
+            Console.WriteLine($"Size: {int.MinValue} to {int.MaxValue}\n");
 
-            uint myUint = 4000000000;
-            Console.WriteLine($"{myUint.GetType()}: {myUint}");
+            uint myUInt = 4000000000;
+            Console.WriteLine($"{myUInt.GetType()}: {myUInt}");
+            Console.WriteLine($"Size: {uint.MinValue} to {uint.MaxValue}\n");
 
             long myLong = 1000000L;
             Console.WriteLine($"{myLong.GetType()}: {myLong}");
+            Console.WriteLine($"Size: {long.MinValue} to {long.MaxValue}\n");
 
             ulong myULong = 3624573;
             Console.WriteLine($"{myULong.GetType()}: {myULong}");
+            Console.WriteLine($"Size: {ulong.MinValue} to {ulong.MaxValue}\n");
 
             /*
-               32-bit single-precision floating point type.
-               It has 7 digit precision. To initialize a `float` variable,
-               use the suffix `f` or `F`. If the suffix will not use then
-               it is treated as `double`.
+                32-bit single-precision floating point type.
+                It has 7 digit precision. To initialize a `float` variable,
+                use the suffix `f` or `F`. If the suffix will not use then
+                it is treated as `double`.
             */
             float myFloatNum = 3.56f;
             Console.WriteLine($"{myFloatNum.GetType()}: {myFloatNum}");
+            Console.WriteLine($"Size: {float.MinValue} to {float.MaxValue}\n");
 
             /*
                 64-bit double-precision floating point type.
@@ -87,6 +101,7 @@ namespace DataTypes {
             */
             double myDoubleNum = 5.99;
             Console.WriteLine($"{myDoubleNum.GetType()}: {myDoubleNum}");
+            Console.WriteLine($"Size: {double.MinValue} to {double.MaxValue}\n");
 
             /*
                 The `decimal` type is a 128-bit data type suitable for financial &
@@ -95,6 +110,7 @@ namespace DataTypes {
             */
             decimal myDec = 300.5m;
             Console.WriteLine($"{myDec.GetType()}: {myDec}");
+            Console.WriteLine($"Size: {decimal.MinValue} to {decimal.MaxValue}\n");
 
             /*
                 A floating point number can also be a scientific number
@@ -127,7 +143,8 @@ namespace DataTypes {
             Console.WriteLine($"{Pi.GetType()}: {Pi}");
             // Note: you can't declare a constant variable without assigning the value.
             
-            Console.WriteLine("{0}", Days.Tuesday);
+            Days myEnum = Days.Wednesday;
+            Console.WriteLine($"{myEnum.GetType()}: {(int)myEnum}\n");
         }
     }
 }

@@ -1,20 +1,26 @@
 ﻿using System;
 using System.IO;
 
-namespace CMDLineArgs {
-    public class Program {
-	    static void Main(string[] args) {
+namespace CMDLineArgs
+{
+    public class Program
+    {
+	    static void Main(string[] args)
+        {
 		    // string pathh = @"/home/omkar/Documents/fileName.txt";
             // Console.WriteLine(pathh);
             string path = Environment.GetCommandLineArgs()[0];
             Console.WriteLine($"fileName: {Path.GetFileName(path)}");
             Console.WriteLine($"fileName (without .ext): {Path.GetFileNameWithoutExtension(path)}");
         
-            if(args.Length > 0) {
-                for(short i = 0; i < args.Length; i++) {
+            if(args.Length > 0)
+            {
+                for(short i = 0; i < args.Length; i++)
+                {
                     Console.WriteLine($"Arg {i}: {args[i]}");
                 }
-            } else {
+            } else
+            {
                 Console.WriteLine("No arguments provided");
             }
 	    }

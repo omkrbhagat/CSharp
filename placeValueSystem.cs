@@ -1,8 +1,11 @@
 ﻿using System;
 
-namespace PlaceValueSys {
-    public class Program {
-        static void Main(string[] args) {
+namespace PlaceValueSys
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
             string[] indianSys = {
                 "Ones",
                 "Tens",
@@ -48,8 +51,10 @@ namespace PlaceValueSys {
             
             
             Console.Write("[{0}, ", indianSys[0]);
-            for(short i = 1; i < indianSys.Length; i++) {
-                if(i == indianSys.Length - 1) {
+            for(short i = 1; i < indianSys.Length; i++)
+            {
+                if(i == indianSys.Length - 1)
+                {
                     Console.Write("{0}]", indianSys[indianSys.Length - 1]);
                     break;
                 }

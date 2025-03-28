@@ -17,13 +17,16 @@
 
 using System;
 
-class Program {
-    static void Main(string[] args) {
+public class Program
+{
+    static void Main(string[] args)
+    {
         Program myProgram = new Program();
         myProgram.Print();
     }
         
-        void Print() {
+        void Print()
+        {
             Console.WriteLine("Hello from Main");
         }
 }

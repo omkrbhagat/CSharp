@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace CSharpShell {
-
-    class Program {
-        static void Main(string[] args) {
+namespace CSharpShell
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
             /*
                 To output values or print text in C#,
                 you can use the `WriteLine` method.
