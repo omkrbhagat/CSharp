@@ -1,6 +1,7 @@
 ﻿using System;
+using System.IO;
 
-namespace CSharpShell
+namespace InputOutput
 {
     public class Program
     {
@@ -18,8 +19,35 @@ namespace CSharpShell
                 difference is that it doesn't insert a
                 new line at the end of the output.
             */
-            Console.Write("I'm learning C#");
-            Console.Write("It is Awesome");
+            Console.Write("I'm learning C#\n");
+            Console.Write("It is Awesome\n");
+            
+            /*
+                The `Console.ReadLine()` methos returns a `string`.
+                Therefore, you cannot get information from another
+                data type, such as `int`. The following line will
+                cause an error.
+            */
+            // int age = Console.ReadLine();
+            // Cannot implicitly convert type `int` to `string`.
+            
+            Console.Write("Enter age: ");
+            // You can convert any type explicitly, by using one of the `Convert.To` methods.
+            try
+            {
+                int age = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"Your age is {age}");
+            } catch (Exception e)
+            {
+                // how to print on a stderr
+                Console.WriteLine($"Error: {e}, Enter correct age.");
+            }
+            
+            /*
+                Note: If you enter wrong input (e. g. text in a numerical input), you will
+                get an exception/error message (like `System.FormatException`: Input string
+                was not in a correct format).
+            */
         }
     }
 }
