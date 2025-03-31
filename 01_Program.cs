@@ -1,3 +1,6 @@
+﻿// to check the language & compiler version
+#error version
+
 using System;
 
 namespace MyApplication
