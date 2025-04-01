@@ -1,5 +1,5 @@
 bin/
 .CSharpShellProjData.db
 demo.cs
-listsGenericType.csproj
 .vs
+obj/
