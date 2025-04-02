@@ -3,3 +3,6 @@ bin/
 demo.cs
 .vs
 obj/
+!PlayGround/
+PlayGround/*
+!PlayGround/Project.csproj
