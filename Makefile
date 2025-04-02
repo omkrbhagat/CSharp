@@ -1,9 +1,16 @@
+SHELL := pwsh.exe
+FILE := 02_programStructure.cs
 
-%.exe: %.cs
-	ni -Path .\PlayGround\Program.cs
-	Add-Content -Path .\PlayGround\Program.cs -Value (Get-Content -Path $<)
-	dotnet run .\PlayGround\Program.cs -o $@
+.PHONY: run clean
 
-.PHONY: clean
+run:
+# Create PlayGround (if missing)
+#	powershell -Command "ni -ItemType Directory -Path '.\PlayGround' -Force"
+# Copy content from source file to .\PlayGround\Program.cs
+	$(SHELL) -Command "Set-Content -Path .\PlayGround\Program.cs -Value (gc -Path $(FILE))"
+# Run the project
+	cd PlayGround && dotnet run
+
+.SILENT:
 clean:
-	del *.exe .CSharpShellProjData.db
+	$(SHELL) -Command "rm .\PlayGround\* -Exclude 'Project.csproj' -Recurse -Force -ErrorAction Ignore"

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ConsoleClass
+namespace ClassConsole
 {
     public class Program
     {
@@ -21,6 +21,7 @@ namespace ConsoleClass
                 Console.WriteLine($"Num: {i}");
             }
             
+            Console.ResetColor();
             Console.ReadKey();
             Console.Clear();
         }

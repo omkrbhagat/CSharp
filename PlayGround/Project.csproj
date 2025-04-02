@@ -3,5 +3,7 @@
 		<OutputType>exe</OutputType>
 		<LangVersion>latest</LangVersion>
 		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsing>enable</ImplicitUsing>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 </Project>
