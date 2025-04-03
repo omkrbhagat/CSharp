@@ -1,9 +1,8 @@
-bin/
-obj/
 .vs
 .vscode
 !PlayGround/
 PlayGround/*
 !PlayGround/Project.csproj
+!PlayGround/Program.cs
 
 .CSharpShellProjData.db

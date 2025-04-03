@@ -11,6 +11,10 @@ run:
 # Run the project
 	cd PlayGround && dotnet run
 
+exec:
+	$(SHELL) -Command "if((Test-Path '.\PlayGround\Program.cs')) {.\PlayGround\bin\Debug\net9.0\Project.exe}"
+
 .SILENT:
 clean:
-	$(SHELL) -Command "rm .\PlayGround\* -Exclude 'Project.csproj' -Recurse -Force -ErrorAction Ignore"
+	$(SHELL) -Command "rm .\PlayGround\* -Exclude *.csproj, *.cs -Recurse -Force -ErrorAction Ignore"
+	$(SHELL) -Command "Set-Content -Path '.\PlayGround\Program.cs' -Value 'using System;'"
