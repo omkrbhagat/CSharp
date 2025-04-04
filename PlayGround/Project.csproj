@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsing>enable</ImplicitUsing>
-    <Nullable>enable</Nullable>
-    <DefineConstants Condition="'$(OS)' == 'Windows'">WINDOWS</DefineConstants>
+    <Nullable>enable</Nullable> 
+    <DefineConstants Condition="'$(OS)' == 'Windows_NT'">WINDOWS</DefineConstants>
   </PropertyGroup>
 </Project>

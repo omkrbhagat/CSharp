@@ -13,7 +13,7 @@ namespace RuntimeCompile_v2
     {
         static void Main(string[] args)
         {
-            string? path;
+            string? path = null;
             if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 path = Environment.GetEnvironmentVariable("USERPROFILE");

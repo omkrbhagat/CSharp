@@ -7,16 +7,18 @@ namespace RuntimeCompile_v1
     {
         static void Main(string[] args)
         {
+            string? path = null;
             if(OperatingSystem.IsAndroid())
             {
-                Directory.SetCurrentDirectory("/storage/emulated/0/Documents/");
+                path = "/storage/emulated/0/Documents/";
             } else if(OperatingSystem.IsWindows())
             {
-                string user = Environment.GetEnvironmentVariable("USERPROFILE");
-                Directory.SetCurrentDirectory(@$"{user}\Desktop\");
+                path = Environment.GetEnvironmentVariable("USERPROFILE");
+                path += @"\Desktop\";
             }
             
-            Console.WriteLine($"pwd: {Directory.GetCurrentDirectory()}");
+            Directory.SetCurrentDirectory(path);
+            Console.Write($"pwd: {Directory.GetCurrentDirectory()}");
         }
     }
 }
