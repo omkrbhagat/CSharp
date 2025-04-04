@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<OutputType>exe</OutputType>
-		<LangVersion>latest</LangVersion>
-		<TargetFramework>net9.0</TargetFramework>
-		<ImplicitUsing>enable</ImplicitUsing>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
+  <PropertyGroup>
+    <OutputType>exe</OutputType>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsing>enable</ImplicitUsing>
+    <Nullable>enable</Nullable>
+    <DefineConstants Condition="'$(OS)' == 'Windows'">WINDOWS</DefineConstants>
+  </PropertyGroup>
 </Project>
