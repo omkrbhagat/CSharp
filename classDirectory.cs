@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.IO;
 using System.Threading;
 
@@ -8,7 +9,19 @@ namespace ClassDir
     {
         static void Main(string[] args)
         {
-            string path = @"/storage/emulated/0/Documents/";
+            string? path = null;
+            if (OperatingSystem.IsAndroid())
+            {
+                path = "/storage/emulated/0/Documents/";
+            } else if(OperatingSystem.IsWindows())
+            {
+                path = Environment.GetEnvironmentVariable("USERPROFILE");
+                path += @"\Desktop\";
+            } else
+            {
+                throw new NotImplementedException("OS not supported");
+            }
+            
             Directory.SetCurrentDirectory(path);
             // Console.WriteLine($"pwd: {Environment.CurrentDirectory}");
             Console.WriteLine($"pwd: {Directory.GetCurrentDirectory()}");

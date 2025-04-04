@@ -17,14 +17,14 @@ namespace Compiletime
                 `<DefineConstants Condition="'$(ANDROID_ROOT)' == '/system'">ANDROID</DefineConstants>`
             */
             #if WINDOWS
-                path = Environment.GetEnvironmentVariable("USERPROFILE");
-                path += @$"{user}\Desktop\";
+                string? user = Environment.GetEnvironmentVariable("USERPROFILE");
+                path = @$"{user}\Desktop\";
             #else
                 path = "/storage/emulated/0/Documents/";
             #endif
             
             Directory.SetCurrentDirectory(path);
-            Console.WriteLine($"pwd: {Directory.GetCurrentDirectory()}");
+            Console.Write($"pwd: {Directory.GetCurrentDirectory()}");
         }
     }
 }
