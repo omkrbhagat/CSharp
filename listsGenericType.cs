@@ -34,16 +34,17 @@ namespace ListDataType
                 `List<string> { ... }` is better when initializing with elements.
             */
             var names = new List<string> {"Ruth", "Rich"};
-            Console.WriteLine($"List<string> Type: {names.GetType()}");
+            Console.WriteLine($"List<string> Type: {names.GetType()}\n");
             names.Add("Katie");
             names.Add("Maximus");
             names.Add("Lexi");
             
+            Console.WriteLine("Elements:");
             foreach(var name in names)
             {
                 Console.WriteLine($"Name: {name}");
             }
-            Console.Write("\n");
+            Console.WriteLine("\nMiddle range elements: ");
             
             foreach(var name in names[2..4])
             {
@@ -55,13 +56,31 @@ namespace ListDataType
             // Console.WriteLine($"Last Name: {names[^1]}");
             // Console.WriteLine($"Second Last: {names[^2]}");
             Console.WriteLine($"Last Name: {names[names.Count - 1]}");
-            Console.WriteLine($"Second Last: {names[names.Count - 2]}");
+            Console.WriteLine($"Second Last: {names[names.Count - 2]}\n");
             
             /*
                 Arrays have `.Length` because they're fixed-size, while `List<T>`
                 is a dynamic collection, so it uses `.Count` to get the number
                 of elements.
             */
+            
+            var shapes = new List<object> {
+                new {Figure = "Circle",
+                    Radius = 5
+                },
+                new {Figure = "Square",
+                    Side = 4
+                },
+                new {Figure = "Rectangle",
+                    Width = 6,
+                    Height = 4
+                }
+            };
+            
+            foreach (var shape in shapes)
+            {
+                Console.WriteLine(shape);
+            }
         }
     }
 }
