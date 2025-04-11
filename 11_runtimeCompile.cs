@@ -35,8 +35,8 @@ namespace RuntimeCompile_v1
             {
                 throw new NotImplementedException("OS not supported");
             }
-
-                Directory.SetCurrentDirectory(path);
+            
+            Directory.SetCurrentDirectory(path);
             Console.Write($"pwd: {Directory.GetCurrentDirectory()}");
         }
     }

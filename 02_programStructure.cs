@@ -43,7 +43,7 @@ namespace TopLevel
 /*
     Note:
     i) Every C# statement ends with a semicolon.
-    ii) V# is case-sensitive; "MyClass" & "myclass"
+    ii) C# is case-sensitive; "MyClass" & "myclass"
     have different meaning.
     iii) Unlike Java, the name of the C# file does
     not have to match the class name, but they often

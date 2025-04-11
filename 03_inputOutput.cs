@@ -23,24 +23,24 @@ namespace InputOutput
             Console.Write("It is Awesome\n");
             
             /*
-                The `Console.ReadLine()` methos returns a `string`.
+                The `Console.ReadLine()` method returns a `string`.
                 Therefore, you cannot get information from another
                 data type, such as `int`. The following line will
-                cause an error.
+                cause an error:
+                int age = Console.ReadLine();
+                Error: Cannot implicitly convert type `int` to `string`.
             */
-            // int age = Console.ReadLine();
-            // Cannot implicitly convert type `int` to `string`.
             
             Console.Write("Enter age: ");
             // You can convert any type explicitly, by using one of the `Convert.To` methods.
             try
             {
                 int age = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine($"Your age is {age}");
+                Console.WriteLine("Your age is " + age);
             } catch (Exception e)
             {
                 // how to print on a stderr
-                Console.WriteLine($"Error: {e}, Enter correct age.");
+                Console.WriteLine("Error: " + e + ", Enter correct age.");
             }
             
             /*

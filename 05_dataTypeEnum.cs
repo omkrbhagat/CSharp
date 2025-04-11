@@ -21,11 +21,10 @@ namespace DataTypeEnum
         • When you define a type inside another type, like a class, it becomes nested type.
         So if Days is inside the Program, it's nested. The '+' symbol is used in the fully
         qualified name to denote a nested type.
-        • But when the enum is defined in thr top-level namespace, it's not nested inside
+        • But when the enum is defined in the top-level namespace, it's not nested inside
         any other type, so its full name is just the namespace plus the type name.
         If you define a type in the top-level namespace without explicitly specifying a
         namspace, it goes into the global namespace.
-        
     */
     enum Level
     {

@@ -1,10 +1,44 @@
+<!-- Defines this as a .NET SDK-style project. The SDK includes
+default build targets, and tasks for compiling, testing & packaging -->
+
 <Project Sdk="Microsoft.NET.Sdk">
+	<!-- A container for project-wide settings -->
   <PropertyGroup>
-    <OutputType>exe</OutputType>
+    
+    <!-- Generates an executable (e.g., a console app).
+    Use `Library` for class libraries -->
+    <OutputType>Exe</OutputType>
     <LangVersion>latest</LangVersion>
+    
+    <!-- .NET 8 & .NET 9 are not called ".NET Core".
+    They're part of the unified .NET platform (since .NET 5).
+    .NET Core (1.0 - 3.1) was the original cross-platform,
+    open-source runtime.
+    .NET 5+ merged .NET Core, .NET Framework & Xamarin into
+    one platform, simply called .NET -->
     <TargetFramework>net9.0</TargetFramework>
+    
+    <!-- To support multiple frameworks (e.g., .NET 9 + .NET Standard 2.0) -->
+    <!-- <TargetFrameworks>net9.0;netstandard2.0</TargetFrameworks> -->
+    
+    <!-- Automatically imports common namespace based on project type,
+    reducing boilerplate using statements -->
     <ImplicitUsing>enable</ImplicitUsing>
+    
+    <!-- Enables nullable reference types, adding compile-time null safety checks -->
     <Nullable>enable</Nullable>
     <DefineConstants Condition="'$(OS)' == 'Windows_NT'">WINDOWS</DefineConstants>
+    
+    <!-- Generates an XML documentation file (used with code comments ///) -->
+    <!-- <GenerateDocumentationFile>true</GenerateDocumentationFile> -->
+    
+    <!-- Permits unsafe code (e.g., pointer operations) -->
+    <!-- <AllowUnsafeBlocks>true</AllowUnsafeBlocks> -->
+    
+    <!-- Specifies the target CPU architecture (e.g., x64, x86 ,arm64) -->
+    <!-- <PlatformTarget>x64</PlatformTarget> -->
+    
+    <!-- Explicitly includes a source file (defaults to all .cs files in the project folder) -->
+    <!-- <Compile Include="MyFile.cs"/> -->
   </PropertyGroup>
 </Project>

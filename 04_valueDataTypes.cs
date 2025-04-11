@@ -5,31 +5,33 @@
     • Reference Data Types
     • Pointer Data Types
 */
+
 namespace DataTypes
 {
+    /*
+        • An `enum` is a special data type used for defining named constant values.
+        • In C#, you cannot define an enum directly inside a method (like `Main`).
+        • An enum is a type, and types must be declared at the namespace or class
+        level.
+        • Methods in C# can only contain executable code (statements, expressions,
+        etc), not type declarations (like enum, class, struct, etc). Types must
+        be declared at higher scope (class or namespace level).
+        If defined at namespace level: `DataTypes.Days`.
+        If defined at class level: `DataTypes.Program+Days`.
+    */
+    enum Days
+    {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
+    
     public class Program
     {
-
-        /*
-            An `enum` is a special data type used for defining named constant values.
-            In C#, you cannot define an enum directly inside a method (like `Main`).
-            An enum is a type, and types must be declared at the namespace or class
-            level.
-            Methods in C# can only contain executable code (statements, expressions,
-            etc), not type declarations (like enum, class, struct, etc). Types must
-            be declared at higher scope (class or namespace level).
-        */
-        enum Days
-        {
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday,
-            Sunday
-        }
-
         static void Main(string[] args)
         {
 
@@ -40,7 +42,7 @@ namespace DataTypes
                 for these data types are `System.ValueType`.
                 
                 We have mainly 2 types of value data types in C#:
-                • Predefined Data Types: Char, Integer, Float, Boolean, etc.
+                • Predefined Data Types: Char, Integer, Float, Double, Boolean, etc.
                 • User-defined Data Types: such as Enumerations, Structure, etc.
             */
 
@@ -51,37 +53,45 @@ namespace DataTypes
             */
 
             byte myByte = 255;
-            Console.WriteLine($"{myByte.GetType()}: {myByte}");
-            Console.WriteLine($"Size: {byte.MinValue} to {byte.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myByte}: {myByte.GetType()}");
+            Console.WriteLine($"Size: {sizeof(byte)}");
+            Console.WriteLine($"Range: {byte.MinValue} to {byte.MaxValue}\n");
 
             sbyte mySByte = 127;
-            Console.WriteLine($"{mySByte.GetType()}: {mySByte}");
-            Console.WriteLine($"Size: {sbyte.MinValue} to {sbyte.MaxValue}\n");
+            Console.WriteLine($"TypeOf {mySByte}: {mySByte.GetType()}");
+            Console.WriteLine($"Size: {sizeof(sbyte)}");
+            Console.WriteLine($"Range: {sbyte.MinValue} to {sbyte.MaxValue}\n");
 
             short myShort = 32767;
-            Console.WriteLine($"{myShort.GetType()}: {myShort}");
-            Console.WriteLine($"Size: {short.MinValue} to {short.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myShort}: {myShort.GetType()}");
+            Console.WriteLine($"Size: {sizeof(short)}");
+            Console.WriteLine($"Range: {short.MinValue} to {short.MaxValue}\n");
             
 
             ushort myUShort = 65535;
-            Console.WriteLine($"{myUShort.GetType()}: {myUShort}");
-            Console.WriteLine($"Size: {ushort.MinValue} to {ushort.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myUShort}: {myUShort.GetType()}");
+            Console.WriteLine($"Size: {sizeof(ushort)}");
+            Console.WriteLine($"Range: {ushort.MinValue} to {ushort.MaxValue}\n");
 
             int myInt = 2147483647; // 2 billion
-            Console.WriteLine($"{myInt.GetType()}: {myInt}");
-            Console.WriteLine($"Size: {int.MinValue} to {int.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myInt}: {myInt.GetType()}");
+            Console.WriteLine($"Size: {sizeof(int)}");
+            Console.WriteLine($"Range: {int.MinValue} to {int.MaxValue}\n");
 
             uint myUInt = 4000000000;
-            Console.WriteLine($"{myUInt.GetType()}: {myUInt}");
-            Console.WriteLine($"Size: {uint.MinValue} to {uint.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myUInt}: {myUInt.GetType()}");
+            Console.WriteLine($"Size: {sizeof(uint)}");
+            Console.WriteLine($"Range: {uint.MinValue} to {uint.MaxValue}\n");
 
             long myLong = 1000000L;
-            Console.WriteLine($"{myLong.GetType()}: {myLong}");
-            Console.WriteLine($"Size: {long.MinValue} to {long.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myLong}: {myLong.GetType()}");
+            Console.WriteLine($"Size: {sizeof(long)}");
+            Console.WriteLine($"Range: {long.MinValue} to {long.MaxValue}\n");
 
             ulong myULong = 3624573;
-            Console.WriteLine($"{myULong.GetType()}: {myULong}");
-            Console.WriteLine($"Size: {ulong.MinValue} to {ulong.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myULong}: {myULong.GetType()}");
+            Console.WriteLine($"Size: {sizeof(ulong)}");
+            Console.WriteLine($"Range: {ulong.MinValue} to {ulong.MaxValue}\n");
 
             /*
                 32-bit single-precision floating point type.
@@ -90,8 +100,9 @@ namespace DataTypes
                 it is treated as `double`.
             */
             float myFloatNum = 3.56f;
-            Console.WriteLine($"{myFloatNum.GetType()}: {myFloatNum}");
-            Console.WriteLine($"Size: {float.MinValue} to {float.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myFloatNum}: {myFloatNum.GetType()}");
+            Console.WriteLine($"Size: {sizeof(float)}");
+            Console.WriteLine($"Range: {float.MinValue} to {float.MaxValue}\n");
 
             /*
                 64-bit double-precision floating point type.
@@ -100,8 +111,9 @@ namespace DataTypes
                 because by default floating data types are the double type.
             */
             double myDoubleNum = 5.99;
-            Console.WriteLine($"{myDoubleNum.GetType()}: {myDoubleNum}");
-            Console.WriteLine($"Size: {double.MinValue} to {double.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myDoubleNum}: {myDoubleNum.GetType()}");
+            Console.WriteLine($"Size: {sizeof(double)}");
+            Console.WriteLine($"Range: {double.MinValue} to {double.MaxValue}\n");
 
             /*
                 The `decimal` type is a 128-bit data type suitable for financial &
@@ -109,18 +121,19 @@ namespace DataTypes
                 a `decimal` variable used the suffix `m` or `M`.
             */
             decimal myDec = 300.5m;
-            Console.WriteLine($"{myDec.GetType()}: {myDec}");
-            Console.WriteLine($"Size: {decimal.MinValue} to {decimal.MaxValue}\n");
+            Console.WriteLine($"TypeOf {myDec}: {myDec.GetType()}");
+            Console.WriteLine($"Size: {sizeof(decimal)}");
+            Console.WriteLine($"Range: {decimal.MinValue} to {decimal.MaxValue}\n");
 
             /*
                 A floating point number can also be a scientific number
                 with an `e` to indicate power of 10.
             */
             float sciFloat = 35e3F;
-            Console.WriteLine($"{sciFloat.GetType()}: {sciFloat}");
+            Console.WriteLine($"Scientific notation for 35e3F single precision value: {sciFloat}");
 
             double sciDouble = 25e5D;
-            Console.WriteLine($"{sciDouble.GetType()}: {sciDouble}");
+            Console.WriteLine($"Scientific notation for 25e5D double precision value: {sciDouble}\n");
 
             /*
                 Character Types:
@@ -128,7 +141,9 @@ namespace DataTypes
                 the 16-bit Unicode character.
             */
             char myChar = 'A';
-            Console.WriteLine($"{myChar.GetType()}: {myChar}");
+            Console.WriteLine($"TypeOf {myChar}: {myChar.GetType()}");
+            Console.WriteLine($"Size: {sizeof(char)}");
+            Console.WriteLine($"Range: {(int)char.MinValue} to {(int)char.MaxValue}\n");
 
             /*
                 Boolean Types:
@@ -136,15 +151,18 @@ namespace DataTypes
                 are not converted implicitly or explicitly (with casts) to any other type.
             */
             bool myBool = true;
-            Console.WriteLine($"{myBool.GetType()}: {myBool}");
+            Console.WriteLine($"TypeOf myBool: {myBool.GetType()}");
+            Console.WriteLine($"Size: {sizeof(bool)}\n");
 
-            // You can add the `const` keyword in front of the variable type.
+            /*
+                You can add the `const` keyword in front of the variable type.
+                Note: you can't declare a constant variable without assigning the value.
+            */
             const float Pi = 3.14F;
-            Console.WriteLine($"{Pi.GetType()}: {Pi}");
-            // Note: you can't declare a constant variable without assigning the value.
             
             Days myEnum = Days.Wednesday;
-            Console.WriteLine($"{myEnum.GetType()}: {(int)myEnum}\n");
+            Console.WriteLine($"TypeOf myEnum: {myEnum.GetType()}");
+            Console.WriteLine($"Value: {(int)myEnum}\n");
         }
     }
 }
